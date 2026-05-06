@@ -177,18 +177,16 @@ class EnginePhysics:
 
         elif self.water_kg > 0.01:
             # ── Phase 2: latent-heat plateau ──────────────────────────────
-            # Temperature stays on the saturation curve.
-            # All net heat converts water → steam, raising pressure.
-            dm = max(0.0, Q_net / L_VAP)
-            dm = min(dm, self.water_kg)
+            # Positive Q_net evaporates water; negative Q_net condenses steam
+            # back to water, dropping pressure and temperature along the
+            # saturation curve until T falls below 99.9°C → Phase 1.
+            dm = Q_net / L_VAP
+            dm = max(-self.steam_kg * 0.5, min(dm, self.water_kg))
             self.water_kg -= dm
-            self.steam_kg += dm
-            # Pressure from ideal gas law at current steam mass
+            self.steam_kg = max(0.001, self.steam_kg + dm)
             T_K = self.T_boiler + 273.15
             self.P_abs = (self.steam_kg * R_STEAM * T_K) / (BOILER_VOL * 1e5)
-            self.P_abs = max(P_ATM, self.P_abs)
-            # Temperature follows the saturation curve upward
-            self.T_boiler = max(100.0, sat_temp(self.P_abs))
+            self.T_boiler = sat_temp(self.P_abs)
 
         else:
             # ── Phase 3: superheated steam (boiler has run dry) ───────────
