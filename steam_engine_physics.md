@@ -58,11 +58,11 @@ $$W = \int \vec{F} \cdot d\vec{x}$$
 
 For a piston of area $A$ pushed by pressure $P$ through distance $dx$:
 
-$$dW = F \, dx = P \cdot A \cdot dx = P \, dV$$
+$$dW = F   dx = P \cdot A \cdot dx = P   dV$$
 
 So the work done by an expanding gas is:
 
-$$\boxed{W = \int_{V_1}^{V_2} P \, dV}$$
+$$\boxed{W = \int_{V_1}^{V_2} P   dV}$$
 
 **Intuition:** Work is the area under a P-V curve. Bigger expansion, more work. Higher pressure during expansion, more work.
 
@@ -86,7 +86,7 @@ The **ideal gas law** connects the state variables:
 
 $$\boxed{PV = nRT}$$
 
-where $R = 8.314 \, \text{J/(mol·K)}$ is the universal gas constant.
+where $R = 8.314   \text{J/(mol·K)}$ is the universal gas constant.
 
 This is your equation of state — given any two of $P$, $V$, $T$, it gives you the third.
 
@@ -178,7 +178,7 @@ $$\Delta S_{universe} \geq 0$$
 This asymmetry is why engines must dump heat — and why efficiency is capped.
 
 ### Third Law
-Entropy approaches a minimum (zero) as temperature approaches absolute zero. Practically, this means you can never reach $T = 0\,\text{K}$.
+Entropy approaches a minimum (zero) as temperature approaches absolute zero. Practically, this means you can never reach $T = 0 \text{K}$.
 
 ---
 
@@ -212,7 +212,7 @@ where $\Omega$ is the number of microstates and $k_B = 1.38 \times 10^{-23}$ J/K
 
 Just as P-V diagrams show work as area, **T-S diagrams** show heat as area:
 
-$$\delta Q_{rev} = T \, dS \quad \Rightarrow \quad Q = \int T \, dS$$
+$$\delta Q_{rev} = T   dS \quad \Rightarrow \quad Q = \int T   dS$$
 
 ```
 T
@@ -307,7 +307,7 @@ When water boils, temperature *stops rising* even as heat is added. All that ene
 
 $$Q = m \cdot L_v$$
 
-For water: $L_v = 2257 \, \text{kJ/kg}$ at 100°C and 1 atm.
+For water: $L_v = 2257   \text{kJ/kg}$ at 100°C and 1 atm.
 
 **This is enormous.** Heating 1 kg of liquid water from 20°C to 100°C takes $\approx 336$ kJ. *Vaporizing* that same kilogram takes $2257$ kJ — nearly **7× more energy**.
 
@@ -388,7 +388,7 @@ Liquid water (nearly incompressible) is pumped from low pressure to high pressur
 
 $$w_{pump} = v_1 (P_2 - P_1)$$
 
-where $v_1$ is specific volume of liquid ($\approx 0.001 \, \text{m}^3/\text{kg}$). This work is tiny — liquid is nearly incompressible, so compressing it takes very little energy. This is the genius of using a condensable fluid.
+where $v_1$ is specific volume of liquid ($\approx 0.001   \text{m}^3/\text{kg}$). This work is tiny — liquid is nearly incompressible, so compressing it takes very little energy. This is the genius of using a condensable fluid.
 
 **Process 2→3: Isobaric Heat Addition (Boiler)**
 
@@ -519,20 +519,20 @@ Let's analyze a simple Rankine cycle with steam tables.
 
 ### Given Conditions
 
-- Boiler pressure: $P_H = 3 \, \text{MPa}$ (30 bar)
-- Condenser pressure: $P_C = 10 \, \text{kPa}$ (0.1 bar, ~45°C saturation)
+- Boiler pressure: $P_H = 3   \text{MPa}$ (30 bar)
+- Condenser pressure: $P_C = 10   \text{kPa}$ (0.1 bar, ~45°C saturation)
 - Steam exits boiler as saturated vapor (no superheating)
 
 ### Steam Table Lookup
 
 **State 1** (condenser exit, saturated liquid at 10 kPa):
-$$T_1 = 45.8°\text{C}, \quad h_1 = 191.8 \, \text{kJ/kg}, \quad v_1 = 0.00101 \, \text{m}^3/\text{kg}$$
+$$T_1 = 45.8°\text{C}, \quad h_1 = 191.8   \text{kJ/kg}, \quad v_1 = 0.00101   \text{m}^3/\text{kg}$$
 
 **State 2** (pump exit, compressed liquid at 3 MPa):
-$$h_2 = h_1 + v_1(P_H - P_C) = 191.8 + 0.00101 \times (3000 - 10) = 194.8 \, \text{kJ/kg}$$
+$$h_2 = h_1 + v_1(P_H - P_C) = 191.8 + 0.00101 \times (3000 - 10) = 194.8   \text{kJ/kg}$$
 
 **State 3** (boiler exit, saturated vapor at 3 MPa):
-$$T_3 = 234°\text{C}, \quad h_3 = 2804 \, \text{kJ/kg}, \quad s_3 = 6.187 \, \text{kJ/(kg·K)}$$
+$$T_3 = 234°\text{C}, \quad h_3 = 2804   \text{kJ/kg}, \quad s_3 = 6.187   \text{kJ/(kg·K)}$$
 
 **State 4** (turbine exit, at 10 kPa, isentropic so $s_4 = s_3$):
 
@@ -540,17 +540,17 @@ At 10 kPa: $s_f = 0.649$, $s_{fg} = 7.501$, $h_f = 191.8$, $h_{fg} = 2392.8$
 
 $$x_4 = \frac{s_4 - s_f}{s_{fg}} = \frac{6.187 - 0.649}{7.501} = 0.738$$
 
-$$h_4 = h_f + x_4 \cdot h_{fg} = 191.8 + 0.738 \times 2392.8 = 1958 \, \text{kJ/kg}$$
+$$h_4 = h_f + x_4 \cdot h_{fg} = 191.8 + 0.738 \times 2392.8 = 1958   \text{kJ/kg}$$
 
 ### Results
 
-$$W_{turbine} = h_3 - h_4 = 2804 - 1958 = 846 \, \text{kJ/kg}$$
+$$W_{turbine} = h_3 - h_4 = 2804 - 1958 = 846   \text{kJ/kg}$$
 
-$$W_{pump} = h_2 - h_1 = 194.8 - 191.8 = 3 \, \text{kJ/kg}$$
+$$W_{pump} = h_2 - h_1 = 194.8 - 191.8 = 3   \text{kJ/kg}$$
 
-$$Q_{boiler} = h_3 - h_2 = 2804 - 194.8 = 2609 \, \text{kJ/kg}$$
+$$Q_{boiler} = h_3 - h_2 = 2804 - 194.8 = 2609   \text{kJ/kg}$$
 
-$$W_{net} = 846 - 3 = 843 \, \text{kJ/kg}$$
+$$W_{net} = 846 - 3 = 843   \text{kJ/kg}$$
 
 $$\eta_{Rankine} = \frac{843}{2609} = 32.3\%$$
 
@@ -566,7 +566,7 @@ Our cycle achieves 87% of the Carnot limit — excellent for an ideal cycle. A r
 
 | Concept | Equation |
 |---------|----------|
-| Work by expanding gas | $W = \int P \, dV$ |
+| Work by expanding gas | $W = \int P   dV$ |
 | First Law | $\Delta U = Q - W$ |
 | Ideal gas | $PV = nRT$ |
 | Adiabatic process | $PV^\gamma = \text{const}$ |
