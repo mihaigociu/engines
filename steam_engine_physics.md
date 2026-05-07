@@ -60,6 +60,14 @@ For a piston of area $A$ pushed by pressure $P$ through distance $dx$:
 
 $$dW = F   dx = P \cdot A \cdot dx = P   dV$$
 
+Breaking down each step:
+
+- **`dW = F dx`** — the definition of work: force times distance. The `d` prefix means an infinitesimally small quantity, so `dW` is the tiny bit of work done as the piston moves a tiny distance `dx`.
+- **`F = P · A`** — pressure is force per unit area (`P = F/A`), so the force on the piston face is pressure times its area `A`.
+- **`A · dx = dV`** — when the piston moves by `dx`, it sweeps out a thin slab of volume (cross-section `A` times thickness `dx`), which is exactly the change in volume `dV`.
+
+So the work done by the gas equals pressure times the volume swept. Integrating over the whole stroke gives the total work output.
+
 So the work done by an expanding gas is:
 
 $$\boxed{W = \int_{V_1}^{V_2} P   dV}$$
