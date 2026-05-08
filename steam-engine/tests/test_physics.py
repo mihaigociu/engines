@@ -34,8 +34,8 @@ def test_sat_pressure_monotonic_in_T():
 
 
 def test_sat_pressure_at_boiling_near_one_atm():
-    # Currently the code returns 1.000 at 100°C (P_ATM prefactor missing,
-    # see code_review.md §3.4). 2% tolerance leaves room either way.
+    # Currently the code returns 1.000 at 100°C (P_ATM prefactor missing).
+    # 2% tolerance leaves room for a future fix to 1.013.
     assert sat_pressure(100.0) == pytest.approx(1.0, rel=0.02)
 
 

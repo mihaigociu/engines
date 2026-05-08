@@ -39,5 +39,4 @@ Controls: heat-input and load sliders in the side panel; `SPACE` nudges the flyw
 - `steam_engine.py` — rendering, input, particles. Owns an `EnginePhysics` and calls `update(dt)` each frame.
 - `steam_engine_physics.md` — deep-dive on the physics (work/heat, ideal gas, Carnot, Rankine, phase transitions).
 - `steam_engine_quiz.md` — self-check quiz spanning the physics doc and the code.
-- `code_review.md` — review of the simulation code with issues and fixes.
 - `tests/` — pytest suite covering pure functions, geometry, conservation invariants, phase model, mechanics, and bug regressions.
