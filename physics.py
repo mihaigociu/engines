@@ -209,7 +209,8 @@ class EnginePhysics:
         """Cool exhaust steam back to liquid water."""
         if self.cond_steam_kg <= 0.0:
             return
-        T_steam  = max(self.T_boiler, self.T_cond + 1.0)
+        P_cond_abs = min(sat_pressure(self.T_cond), P_ATM)
+        T_steam    = max(sat_temp(P_cond_abs), self.T_cond + 1.0)
         Q_reject = COND_K * (T_steam - self.T_cond) * dt   # kJ
         dm = max(0.0, min(Q_reject / L_VAP, self.cond_steam_kg))
         self.cond_steam_kg -= dm
@@ -275,7 +276,7 @@ class EnginePhysics:
         T_K = self.T_boiler + 273.15
         dm_per_rad   = (DISPLACEMENT * CUTOFF * self.P_abs * 1e5) \
                        / (R_STEAM * T_K * math.pi)
-        dm_consumed  = 2.0 * dm_per_rad * self.omega * dt
+        dm_consumed  = dm_per_rad * self.omega * dt
         dm_consumed  = max(0.0, min(dm_consumed, self.steam_kg * 0.3))
 
         self.steam_kg      -= dm_consumed
